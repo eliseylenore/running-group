@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RunnerService } from '../runner.service';
+import { Runner } from '../runner.model';
 
 @Component({
   selector: 'app-runners-list',

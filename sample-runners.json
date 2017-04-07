@@ -1,0 +1,12 @@
+{ "runners": [{
+    "name": "Tammy Dang",
+    "role": "Leader",
+    "daysAttended": 3,
+    "profilePic": "https://s-media-cache-ak0.pinimg.com/originals/d8/c0/d5/d8c0d5c3cc511ec8ec062a01458f8b2b.jpg"
+  }, {
+    "name": "Elise St Hilaire",
+    "role": "Webmaster",
+    "daysAttended": 1,
+    "profilePic": "http://www.petakids.com/wp-content/uploads/2015/11/Baby-Bunny.jpg"
+  }]
+}
