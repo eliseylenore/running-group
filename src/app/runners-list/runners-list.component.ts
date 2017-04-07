@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RunnerService } from '../runner.service';
 import { Runner } from '../runner.model';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-runners-list',
@@ -9,7 +10,7 @@ import { Runner } from '../runner.model';
   providers: [RunnerService]
 })
 export class RunnersListComponent implements OnInit {
-  runners: Runner[];
+  runners: FirebaseListObservable<any[]>;
 
   constructor(private runnerService: RunnerService) { }
 

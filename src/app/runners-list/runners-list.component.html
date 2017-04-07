@@ -1,3 +1,5 @@
-<p>
-  runners-list works!
-</p>
+<div *ngFor="let runner of runners | async" class="panel panel-default">
+  <div class="panel-body">
+    <h3>{{runner.name}}</h3>
+  </div>
+</div>
