@@ -35,4 +35,11 @@ export class RunnerService {
     var runnerEntryInFirebase = this.getRunnerById(localRunnerToDelete.$key);
     runnerEntryInFirebase.remove();
   }
+
+  attendedClass(localRunnerToMarkInAttendance) {
+    var runnerEntryInFirebase = this.getRunnerById(localRunnerToMarkInAttendance.$key);
+    runnerEntryInFirebase.update({
+      daysAttended: localRunnerToMarkInAttendance.daysAttended
+    });
+  }
 }

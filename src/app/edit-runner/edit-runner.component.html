@@ -15,6 +15,9 @@
     <button (click)="beginDeletingRunner(selectedRunner)" class="btn btn-danger">Delete</button>
   </div>
   <div class="col-xs-3">
-    <a href="#" (click)="attendedClass()">Mark that {{selectedRunner?.name}} attended class {{todaysDate}}</a>
+    <p>
+      {{selectedRunner?.name}} has attended class {{selectedRunner?.daysAttended}} times.
+    </p>
+    <a href="#" (click)="beginMarkingAsPresent(selectedRunner)">Mark that {{selectedRunner?.name}} attended class {{todaysDate}}</a>
   </div>
 </div>

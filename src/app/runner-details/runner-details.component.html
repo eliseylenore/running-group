@@ -1,6 +1,6 @@
 <div class="profile-pic">
-  <img src="{{(runnerToDisplay | async)?.profilePic}}" alt="{{(runnerToDisplay | async)?.name}}" />
+  <img src="{{runnerToDisplay?.profilePic}}" alt="{{runnerToDisplay?.name}}" />
 </div>
 <h1 class="center">{{runnerToDisplay?.name}}</h1>
 <h3 class="center">{{runnerToDisplay?.role}}</h3>
-<h3>{{runnerToDisplay?.name}} has attended Basic Runners {{runnerToDisplay.daysAttended}} times already!</h3>
+<h3>{{runnerToDisplay?.name}} has attended Basic Runners {{runnerToDisplay?.daysAttended}} times already!</h3>

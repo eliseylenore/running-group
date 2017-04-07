@@ -29,8 +29,10 @@ export class RunnerDetailsComponent implements OnInit {
         dataLastEmittedFromObserver.role,
         dataLastEmittedFromObserver.profilePic
       );
+      this.runnerToDisplay.daysAttended = dataLastEmittedFromObserver.daysAttended;
     })
-
   }
+
+
 
 }

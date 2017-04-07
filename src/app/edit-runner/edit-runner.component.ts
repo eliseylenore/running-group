@@ -28,4 +28,12 @@ export class EditRunnerComponent implements OnInit {
     }
   }
 
+  beginMarkingAsPresent(runnerToMarkAsPresent) {
+    let name = runnerToMarkAsPresent.name;
+    if(confirm("Are you sure you would like to add one day to days attended for " + name + "?")) {
+      runnerToMarkAsPresent.daysAttended  += 1;
+      this.runnerService.attendedClass(runnerToMarkAsPresent);
+    }
+  }
+
 }
