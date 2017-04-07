@@ -9,6 +9,7 @@ import { routing } from './app.routing';
 import { RunnersListComponent } from './runners-list/runners-list.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import { RunnerDetailsComponent } from './runner-details/runner-details.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,7 +22,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     WelcomeComponent,
-    RunnersListComponent
+    RunnersListComponent,
+    RunnerDetailsComponent
   ],
   imports: [
     BrowserModule,
