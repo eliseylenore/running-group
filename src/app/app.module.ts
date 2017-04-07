@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { EditRunnerComponent } from './edit-runner/edit-runner.component';
 import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     AdminComponent,
     EditRunnerComponent,
     AboutComponent,
-    ChatComponent
+    ChatComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
