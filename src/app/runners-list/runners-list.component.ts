@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 
 export class RunnersListComponent implements OnInit {
   runners: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(private runnerService: RunnerService, private router: Router) { }
 
