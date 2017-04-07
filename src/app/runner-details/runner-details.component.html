@@ -1,3 +1,6 @@
-<p>
-  This runner is: {{(runnerToDisplay | async)?.name}}
-</p>
+<div class="profile-pic">
+  <img src="{{(runnerToDisplay | async)?.profilePic}}" alt="{{(runnerToDisplay | async)?.name}}" />
+</div>
+<h1 class="center">{{(runnerToDisplay | async)?.name}}</h1>
+<h3 class="center">{{(runnerToDisplay | async)?.role}}</h3>
+<h3>{{(runnerToDisplay | async)?.name}} has attended Basic Runners {{(runnerToDisplay | async)?.daysAttended}} times already!</h3>
