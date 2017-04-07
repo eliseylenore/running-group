@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RunnerDetailsComponent } from './runner-details/runner-details.component';
 import { AdminComponent } from './admin/admin.component';
 import { AboutComponent } from './about/about.component';
+import { ChatComponent } from './chat/chat.component';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +19,9 @@ const appRoutes: Routes = [
   }, {
     path: 'about',
     component: AboutComponent
+  }, {
+    path: 'chat',
+    component: ChatComponent
   }
 ];
 

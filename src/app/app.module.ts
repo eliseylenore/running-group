@@ -13,6 +13,7 @@ import { RunnerDetailsComponent } from './runner-details/runner-details.componen
 import { AdminComponent } from './admin/admin.component';
 import { EditRunnerComponent } from './edit-runner/edit-runner.component';
 import { AboutComponent } from './about/about.component';
+import { ChatComponent } from './chat/chat.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -29,7 +30,8 @@ export const firebaseConfig = {
     RunnerDetailsComponent,
     AdminComponent,
     EditRunnerComponent,
-    AboutComponent
+    AboutComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
