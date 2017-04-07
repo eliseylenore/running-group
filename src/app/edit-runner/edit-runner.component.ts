@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Runner } from '../runner.model';
 
 @Component({
   selector: 'app-edit-runner',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-runner.component.css']
 })
 export class EditRunnerComponent implements OnInit {
+  @Input() selectedRunner;
 
   constructor() { }
 

@@ -2,7 +2,7 @@
   <div class="panel-body" (click)="goToDetailsPage(runner)">
     <h3>{{runner.name}}</h3>
     <div *ngIf="currentRoute==='/admin'">
-      <app-edit-runner></app-edit-runner>
+      <app-edit-runner [selectedRunner]="runner"></app-edit-runner>
     </div>
   </div>
 </div>
