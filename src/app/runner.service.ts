@@ -14,4 +14,8 @@ export class RunnerService {
     return this.runners;
   }
 
+  getRunnerById(runnerId: string) {
+    return this.angularFire.database.object('runners/' + runnerId)
+  }
+
 }

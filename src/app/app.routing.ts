@@ -8,7 +8,7 @@ const appRoutes: Routes = [
     path: '',
     component: WelcomeComponent
   }, {
-    path: 'runner-details',
+    path: 'runners/:id',
     component: RunnerDetailsComponent
   }
 ];
