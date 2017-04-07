@@ -1,6 +1,9 @@
 export class Runner {
-  public name: string;
-  public role: string;
-  public daysAttended: number;
-  public profilePic: string;
+  public daysAttended: number = 0;
+
+  constructor(
+    public name: string,
+    public role: string,
+    public profilePic: string
+  ) {}
 }

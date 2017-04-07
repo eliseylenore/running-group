@@ -18,4 +18,8 @@ export class RunnerService {
     return this.angularFire.database.object('runners/' + runnerId)
   }
 
+  addRunner(newRunner: Runner) {
+    this.runners.push(newRunner);
+  }
+
 }
