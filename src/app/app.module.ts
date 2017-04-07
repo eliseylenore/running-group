@@ -15,6 +15,7 @@ import { EditRunnerComponent } from './edit-runner/edit-runner.component';
 import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { RolePipe } from './role.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -33,7 +34,8 @@ export const firebaseConfig = {
     EditRunnerComponent,
     AboutComponent,
     ChatComponent,
-    NewPostComponent
+    NewPostComponent,
+    RolePipe
   ],
   imports: [
     BrowserModule,
