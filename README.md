@@ -2,6 +2,12 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
+##To run, acquire Firebase Credentials First!
+
+Set up your project and create a src/app/api-keys.ts file that exports your api-key, authDomain, databaseURL, and storageBucket.
+
+export var masterFirebaseConfig = { //insert Firebase Credentials here }
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
