@@ -14,4 +14,8 @@ export class PostService {
     return this.posts;
   }
 
+  addPost(postToBeSaved) {
+    this.posts.push(postToBeSaved);
+  }
+
 }
