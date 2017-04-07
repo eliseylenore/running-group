@@ -8,5 +8,14 @@
     "role": "Webmaster",
     "daysAttended": 1,
     "profilePic": "http://www.petakids.com/wp-content/uploads/2015/11/Baby-Bunny.jpg"
+  }],
+  "posts": [{
+    "date": "2014-12-23",
+    "author": "Billy Bob",
+    "text": "I'm not sure if I get what this is about. Can you more clearly explain what the point of this group is??????"
+  }, {
+    "date": "2014-12-24",
+    "author": "Elise St Hilaire",
+    "text": "It's like a meetup twice a week where we get together jog or whateves to combat the sedentary lifestyle of coding"
   }]
 }
