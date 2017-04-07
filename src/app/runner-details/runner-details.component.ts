@@ -23,7 +23,14 @@ export class RunnerDetailsComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.runnerId = urlParameters['id'];
     });
-    this.runnerToDisplay = this.runnerService.getRunnerById(this.runnerId);
+    this.runnerService.getRunnerById(this.runnerId).subscribe(dataLastEmittedFromObserver => {
+      this.runnerToDisplay = new Runner(
+        dataLastEmittedFromObserver.name,
+        dataLastEmittedFromObserver.role,
+        dataLastEmittedFromObserver.profilePic
+      );
+    })
+
   }
 
 }
