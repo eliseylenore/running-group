@@ -31,4 +31,8 @@ export class RunnerService {
     });
   }
 
+  deleteRunner(localRunnerToDelete) {
+    var runnerEntryInFirebase = this.getRunnerById(localRunnerToDelete.$key);
+    runnerEntryInFirebase.remove();
+  }
 }

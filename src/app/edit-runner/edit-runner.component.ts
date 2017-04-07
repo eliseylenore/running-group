@@ -19,4 +19,10 @@ export class EditRunnerComponent implements OnInit {
     this.runnerService.updateRunner(selectedRunner);
   }
 
+  beginDeletingRunner(runnerToDelete) {
+    if(confirm("Are you sure you want to delete this runner from the group?")) {
+      this.runnerService.deleteRunner(runnerToDelete);
+    }
+  }
+
 }
