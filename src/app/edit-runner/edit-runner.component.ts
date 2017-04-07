@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Runner } from '../runner.model';
+import { RunnerService } from '../runner.service';
 
 @Component({
   selector: 'app-edit-runner',
@@ -9,9 +10,13 @@ import { Runner } from '../runner.model';
 export class EditRunnerComponent implements OnInit {
   @Input() selectedRunner;
 
-  constructor() { }
+  constructor(private runnerService: RunnerService) { }
 
   ngOnInit() {
+  }
+
+  beginUpdatingRunner(selectedRunner) {
+    this.runnerService.updateRunner(selectedRunner);
   }
 
 }

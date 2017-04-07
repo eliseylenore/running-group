@@ -22,4 +22,13 @@ export class RunnerService {
     this.runners.push(newRunner);
   }
 
+  updateRunner(localUpdatedRunner) {
+    var runnerEntryInFirebase = this.getRunnerById(localUpdatedRunner.$key);
+    runnerEntryInFirebase.update({
+      name: localUpdatedRunner.name,
+      role: localUpdatedRunner.role,
+      profilePic: localUpdatedRunner.profilePic
+    });
+  }
+
 }
