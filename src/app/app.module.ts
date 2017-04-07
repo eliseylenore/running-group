@@ -11,6 +11,7 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { RunnerDetailsComponent } from './runner-details/runner-details.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditRunnerComponent } from './edit-runner/edit-runner.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -25,7 +26,8 @@ export const firebaseConfig = {
     WelcomeComponent,
     RunnersListComponent,
     RunnerDetailsComponent,
-    AdminComponent
+    AdminComponent,
+    EditRunnerComponent
   ],
   imports: [
     BrowserModule,
