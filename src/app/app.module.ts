@@ -10,6 +10,7 @@ import { RunnersListComponent } from './runners-list/runners-list.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { RunnerDetailsComponent } from './runner-details/runner-details.component';
+import { AdminComponent } from './admin/admin.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -23,7 +24,8 @@ export const firebaseConfig = {
     AppComponent,
     WelcomeComponent,
     RunnersListComponent,
-    RunnerDetailsComponent
+    RunnerDetailsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
