@@ -12,13 +12,26 @@ import { Router } from '@angular/router';
 })
 
 export class RunnersListComponent implements OnInit {
-  runners: FirebaseListObservable<any[]>;
+  runners: Runner[];
   currentRoute: string = this.router.url;
 
   constructor(private runnerService: RunnerService, private router: Router) { }
 
   ngOnInit() {
-    this.runners = this.runnerService.getRunners();
+    this.runnerService.getRunners().subscribe(dataLastEmittedFromObserver => {
+      this.runners = dataLastEmittedFromObserver;
+
+      let thisComponent = this;
+      this.runners.forEach((runner) => {
+        runner = new Runner(
+          runner.name,
+          runner.role,
+          runner.profilePic
+        )
+      });
+    })
+
+
   }
 
   goToDetailsPage(clickedRunner) {

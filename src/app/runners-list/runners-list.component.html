@@ -1,7 +1,8 @@
 
-<div *ngFor="let runner of runners | async | role" class="panel panel-default">
+<div *ngFor="let runner of runners | role: 'Leader'" class="panel panel-default">
+
   <div class="panel-body">
-    <h3 (click)="goToDetailsPage(runner)">{{runner.name}}</h3>
+    <h3 (click)="goToDetailsPage(runner)">{{runner?.name}}</h3>
     <div *ngIf="currentRoute==='/admin'">
       <app-edit-runner [selectedRunner]="runner"></app-edit-runner>
     </div>
