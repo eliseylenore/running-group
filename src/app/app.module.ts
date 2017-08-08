@@ -8,7 +8,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { RunnersListComponent } from './runners-list/runners-list.component';
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
+import {
+  AngularFireModule,
+  AuthMethods,
+  AuthProviders
+} from 'angularfire2';
+
 import { RunnerDetailsComponent } from './runner-details/runner-details.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditRunnerComponent } from './edit-runner/edit-runner.component';
@@ -16,6 +21,8 @@ import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { RolePipe } from './role.pipe';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -35,16 +42,24 @@ export const firebaseConfig = {
     AboutComponent,
     ChatComponent,
     NewPostComponent,
-    RolePipe
+    RolePipe,
+    SignInComponent,
   ],
   imports: [
+    BootstrapModalModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, {
+      provider: AuthProviders.Google,
+      method: AuthMethods.Popup
+    })
   ],
   providers: [],
+  entryComponents: [
+        SignInComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
