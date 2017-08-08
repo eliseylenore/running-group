@@ -23,6 +23,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { RolePipe } from './role.pipe';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -44,6 +45,7 @@ export const firebaseConfig = {
     NewPostComponent,
     RolePipe,
     SignInComponent,
+    DashboardComponent,
   ],
   imports: [
     BootstrapModalModule,
