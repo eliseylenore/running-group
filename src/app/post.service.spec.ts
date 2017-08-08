@@ -3,14 +3,14 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { PostService } from './post.service';
 
-describe('PostService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [PostService]
-    });
-  });
-
-  it('should ...', inject([PostService], (service: PostService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+// describe('PostService', () => {
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({
+//       providers: [PostService]
+//     });
+//   });
+//
+//   it('should ...', inject([PostService], (service: PostService) => {
+//     expect(service).toBeTruthy();
+//   }));
+// });

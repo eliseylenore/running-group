@@ -9,16 +9,13 @@ import { RunnerService} from './runner.service';
 })
 
 export class RolePipe implements PipeTransform {
-
-  constructor(private runnerService: RunnerService, private af:AngularFire) {}
-
-  transform(value: any, runnerRole) {
-    var filteredRunners= this.af.database.list('runners',{
-      query:{
-        orderByChild: 'role',
-        equalTo: runnerRole
+  transform(input: Runner[], desiredRole: string) {
+    var output: Runner[] = [];
+    for (var i = 0; i < input.length; i++) {
+      if (input[i].role == desiredRole) {
+        output.push(input[i]);
       }
-    });
-    return filteredRunners;
+    }
+    return input;
   }
 }
