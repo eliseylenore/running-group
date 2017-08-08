@@ -26,9 +26,15 @@ export class DashboardComponent implements OnInit {
   openAuthentication() {
     let disposable = this.dialogService.addDialog(SignInComponent, {
       title: 'Sign In',
-      message: 'Sign In',
-    });
-
+      message: 'Sign In'}).subscribe((isConfirmed)=>{
+                    //We get dialog result
+                    if(isConfirmed) {
+                        alert('accepted');
+                    }
+                    else {
+                        alert('You were not logged in. Please try again.');
+                    }
+                });
   }
 
 }
