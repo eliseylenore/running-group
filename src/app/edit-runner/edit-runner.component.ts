@@ -10,7 +10,7 @@ import { RunnerService } from '../runner.service';
 export class EditRunnerComponent implements OnInit {
   @Input() selectedRunner;
   thisDate: Date = new Date();
-  todaysDate: string = this.thisDate.getMonth() + "/" + this.thisDate.getMonth() + "/" + this.thisDate.getFullYear();
+  todaysDate: string = (this.thisDate.getMonth() + 1) + "/" + this.thisDate.getMonth() + "/" + this.thisDate.getFullYear();
 
 
   constructor(private runnerService: RunnerService) { }

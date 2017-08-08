@@ -4,14 +4,14 @@
   </div>
   <div class="panel-body">
     <div class="">
-      <div>
-        <input #newName placeholder="Name">
+      <div class="form-group">
+        <input class="form-control" #newName placeholder="Name">
       </div>
-      <div>
-        <input #newRole placeholder="Role">
+      <div class="form-group">
+        <input class="form-control" #newRole placeholder="Role">
       </div>
-      <div>
-        <input #newProfilePic placeholder="Url for profilepic image">
+      <div class="form-group">
+        <input class="form-control" #newProfilePic placeholder="Url for profilepic image">
       </div>
       <button type="button" class="btn btn-warning" (click)="submitForm(newName.value, newRole.value, newProfilePic.value); newName.value=''; newRole.value=''; newProfilePic.value='' ">Add</button>
     </div>
