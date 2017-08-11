@@ -53,7 +53,7 @@ export const firebaseConfig = {
     EmailComponent,
     SignupComponent,
     MembersComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BootstrapModalModule,
@@ -61,21 +61,9 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     routing,
-<<<<<<< HEAD
     AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [AuthGuard],
-=======
-    AngularFireModule.initializeApp(firebaseConfig, {
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    })
-  ],
-  providers: [],
-  entryComponents: [
-        SignInComponent
-  ],
->>>>>>> aacca2416bc0a040fb291c14083e05ebb50f8e3e
   bootstrap: [AppComponent]
 })
 export class AppModule { }
