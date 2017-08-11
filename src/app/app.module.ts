@@ -16,6 +16,11 @@ import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { RolePipe } from './role.pipe';
+import { LoginComponent } from './login/login.component';
+import { EmailComponent } from './email/email.component';
+import { SignupComponent } from './signup/signup.component';
+import { MembersComponent } from './members/members.component';
+import { AuthGuard } from './auth.service';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -35,16 +40,20 @@ export const firebaseConfig = {
     AboutComponent,
     ChatComponent,
     NewPostComponent,
-    RolePipe
+    RolePipe,
+    LoginComponent,
+    EmailComponent,
+    SignupComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
