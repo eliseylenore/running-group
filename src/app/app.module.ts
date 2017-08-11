@@ -8,7 +8,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { RunnersListComponent } from './runners-list/runners-list.component';
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
+import {
+  AngularFireModule,
+  AuthMethods,
+  AuthProviders
+} from 'angularfire2';
+
 import { RunnerDetailsComponent } from './runner-details/runner-details.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditRunnerComponent } from './edit-runner/edit-runner.component';
@@ -16,11 +21,14 @@ import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { RolePipe } from './role.pipe';
+
 import { LoginComponent } from './login/login.component';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 import { AuthGuard } from './auth.service';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -44,16 +52,30 @@ export const firebaseConfig = {
     LoginComponent,
     EmailComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    DashboardComponent
   ],
   imports: [
+    BootstrapModalModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
+<<<<<<< HEAD
     AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [AuthGuard],
+=======
+    AngularFireModule.initializeApp(firebaseConfig, {
+      provider: AuthProviders.Google,
+      method: AuthMethods.Popup
+    })
+  ],
+  providers: [],
+  entryComponents: [
+        SignInComponent
+  ],
+>>>>>>> aacca2416bc0a040fb291c14083e05ebb50f8e3e
   bootstrap: [AppComponent]
 })
 export class AppModule { }

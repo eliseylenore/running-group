@@ -1,8 +1,10 @@
 export class Post {
-  public date: Date = new Date();
+  public date;
 
   constructor(
     public author: string,
     public text: string,
-  ) {}
+  ) {
+    this.date = new Date().getTime();
+  }
 }
