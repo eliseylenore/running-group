@@ -1,0 +1,30 @@
+$dark-purple: #800080;
+$bright-green: #00ff00;
+
+.navbar-default {
+  background-color: $dark-purple;
+  a {
+    color: white;
+    display: inline-block;
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.title {
+  font-family: 'Sedgwick Ave', cursive;
+  font-size: 72px;
+  margin: 35px auto;
+  text-align: center;
+  a {
+    color: white;
+    margin: 0 auto;
+    display: inline-block;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
