@@ -14,10 +14,39 @@ $bright-green: #00ff00;
   }
 }
 
+.first {
+  order: 1;
+}
+
+.second {
+  order: 2;
+}
+
+.third {
+  order: 3;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.flex-mother {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
 .title {
   font-family: 'Sedgwick Ave', cursive;
   font-size: 72px;
-  margin: 35px auto;
+  margin: 35px 30px;
   text-align: center;
   a {
     color: white;
