@@ -1,6 +1,8 @@
+/********** Mixins **********/
 $dark-purple: #800080;
 $bright-green: #00ff00;
 
+/********** Base Styles **********/
 .navbar-default {
   background-color: $dark-purple;
   a {
@@ -14,39 +16,13 @@ $bright-green: #00ff00;
   }
 }
 
-.first {
-  order: 1;
-}
-
-.second {
-  order: 2;
-}
-
-.third {
-  order: 3;
-}
-
-li {
-  display: flex;
-  align-items: center;
-}
-
-.flex-mother {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-}
-
 .nav > li > a:hover, .nav > li > a:focus {
   background-color: transparent;
 }
 
 .title {
   font-family: 'Sedgwick Ave', cursive;
-  font-size: 72px;
-  margin: 35px 30px;
+  font-size: 30px;
   text-align: center;
   a {
     color: white;
@@ -55,5 +31,47 @@ li {
     &:hover {
       text-decoration: none;
     }
+  }
+}
+
+/********** Media queries **********/
+
+@media(min-width: 793px) {
+  .nav {
+    padding-left: auto;
+    display: inline-block;
+  }
+
+  .nav ul {
+    display: inline-block;
+  }
+  .first {
+    order: 1;
+  }
+
+  .second {
+    order: 2;
+  }
+
+  .third {
+    order: 3;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-mother {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .title {
+    font-size: 60px;
+    margin: 35px 30px;
   }
 }
