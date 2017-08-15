@@ -1,4 +1,4 @@
-<div class="form-container" id="toolbar">
+
   <div id="page" [@moveInLeft]="state">
     <h2 *ngIf="name.auth.displayName">Hey {{ name.auth.displayName }}!</h2>
     <h2 *ngIf="!name.auth.displayName">Hey {{ name.auth.email }}!</h2>
@@ -6,4 +6,5 @@
 
     <!-- <img src="assets/images/filler.png"> -->
   </div>
-</div>
+
+<app-runners-list></app-runners-list>

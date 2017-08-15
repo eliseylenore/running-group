@@ -1,7 +1,7 @@
 # RunningGroup
 ### By **Elise St Hilaire**
 
-## Meetup group for programming geeks who want to get in shape.
+### Meetup group for programming geeks who want to get in shape.
 
 ![alt text](./src/assets/images/athletics-512.png);
 

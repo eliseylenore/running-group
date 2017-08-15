@@ -38,10 +38,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'runners/:id',
-    component: RunnerDetailsComponent
+    component: RunnerDetailsComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   }, {
     path: 'about',
     component: AboutComponent
