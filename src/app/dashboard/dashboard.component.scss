@@ -1,9 +1,4 @@
-/********** Mixins
-Exported to edit-runners
-**********/
-$teal: #61CCCC;
-$peach: #FFC3A0;
-$bright-orange: #FFA500;
+@import '../app.component.scss';
 
 /********** Base Styles **********/
 .navbar-default {
@@ -24,7 +19,7 @@ $bright-orange: #FFA500;
 }
 
 .title {
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: $lobster;
   font-size: 30px;
   text-align: center;
   a {

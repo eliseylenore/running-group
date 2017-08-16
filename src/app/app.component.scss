@@ -1,0 +1,13 @@
+/********** Mixins
+Exported to edit-runners
+**********/
+$teal: #00CED1;
+$peach: #FFC3A0;
+$bright-orange: #FFA500;
+$lobster: 'Lobster', cursive;
+$cabin: 'Cabin', sans-serif;
+
+/********** Mixins imported from dashboard **********/
+a, body, .panel {
+  font-family: $cabin;
+}
