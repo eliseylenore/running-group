@@ -6,7 +6,7 @@ import { RunnerService } from '../runner.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'],
+  styleUrls: ['./admin.component.scss'],
   providers: [RunnerService]
 })
 export class AdminComponent implements OnInit {

@@ -6,7 +6,7 @@ import { moveIn } from '../router.animations';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
   animations: [moveIn()],
   host: {'[@moveIn]': ''}
 })

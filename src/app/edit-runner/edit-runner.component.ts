@@ -5,7 +5,7 @@ import { RunnerService } from '../runner.service';
 @Component({
   selector: 'app-edit-runner',
   templateUrl: './edit-runner.component.html',
-  styleUrls: ['./edit-runner.component.css']
+  styleUrls: ['./edit-runner.component.scss']
 })
 export class EditRunnerComponent implements OnInit {
   @Input() selectedRunner;

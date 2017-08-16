@@ -9,7 +9,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 @Component({
   selector: 'app-runner-details',
   templateUrl: './runner-details.component.html',
-  styleUrls: ['./runner-details.component.css'],
+  styleUrls: ['./runner-details.component.scss'],
   providers: [RunnerService]
 })
 

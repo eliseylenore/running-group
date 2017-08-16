@@ -6,7 +6,7 @@ import { moveIn, fallIn } from '../router.animations';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  styleUrls: ['./signup.component.scss'],
   animations: [moveIn(), fallIn()],
   host: {'[@moveIn]': ''}
 })

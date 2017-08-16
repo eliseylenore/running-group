@@ -6,7 +6,7 @@ import { moveIn, fallIn, moveInLeft } from '../router.animations';
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
-  styleUrls: ['./members.component.css'],
+  styleUrls: ['./members.component.scss'],
   animations: [moveIn(), fallIn(), moveInLeft()],
   host: {'[@moveIn]': ''}
 })

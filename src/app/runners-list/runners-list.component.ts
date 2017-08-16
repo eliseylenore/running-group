@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-runners-list',
   templateUrl: './runners-list.component.html',
-  styleUrls: ['./runners-list.component.css'],
+  styleUrls: ['./runners-list.component.scss'],
   providers: [RunnerService]
 })
 

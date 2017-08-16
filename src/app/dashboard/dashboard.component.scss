@@ -1,10 +1,13 @@
-/********** Mixins **********/
-$dark-purple: #800080;
-$bright-green: #00ff00;
+/********** Mixins
+Exported to edit-runners
+**********/
+$teal: #61CCCC;
+$peach: #FFC3A0;
+$bright-orange: #FFA500;
 
 /********** Base Styles **********/
 .navbar-default {
-  background-color: $dark-purple;
+  background-color: $teal;
   a {
     color: white;
     display: inline-block;
