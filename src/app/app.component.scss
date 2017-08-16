@@ -11,3 +11,15 @@ $cabin: 'Cabin', sans-serif;
 a, body, .panel {
   font-family: $cabin;
 }
+
+.btn-warning {
+  background-color: $bright-orange;
+}
+
+.btn-danger {
+  background-color: $peach;
+}
+
+.btn {
+  width: 75px;
+}
