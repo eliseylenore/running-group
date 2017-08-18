@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service'
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { SignInComponent } from '../sign-in/sign-in.component';
 import { DialogService } from "ng2-bootstrap-modal";
 import { Router } from '@angular/router';
@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   signedIn;
 
   constructor(
-    public af: AngularFire,
+    public af: AngularFireDatabase,
     private authenticationService: AuthenticationService,
     private dialogService: DialogService,
     private router: Router
@@ -26,19 +26,19 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.af.auth.subscribe(auth => {
-      if(auth) {
-        this.signedIn = true;
-        this.name = auth;
-      }
-    });
+    if(this.authenticationService.currentUser) {
+      this.router.navigateByUrl('/members');
+    }
   }
 
   logout() {
-    this.af.auth.logout();
-    console.log('logged out');
-    this.signedIn = false;
-    this.router.navigateByUrl('/login');
+    firebase.auth().signOut().then(function() {
+      this.signedIn = false;
+      this.router.navigateByUrl('/login');
+      console.log('logged out');
+    }).catch(function(error) {
+        alert("An error occured: " + error)
+      });
   }
 
   openAuthentication() {

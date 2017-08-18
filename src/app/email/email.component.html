@@ -10,6 +10,27 @@
       <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
 
       <button type="submit" [disabled]="!formData.valid" class="basic-btn">Log in</button>
+
+      <div *ngIf="authenticationService && !auth.hasUsername">
+        <h3>Choose a Username</h3>
+        <input type="text" class="input" placeholder="choose a username" [(ngModel)]="usernameText"
+        (keyup)="checkUsername()">
+
+        <p class="help is-success" *ngIf="usernameAvailable && usernameText">
+          @{{usernameText}} is available
+        </p>
+
+        <p class="help is-danger" *ngIf="!usernameAvailable && usernameText">
+          @{{usernameText}} has already been taken
+        </p>
+
+        <button class="btn btn-primary"
+        [disabled]="!usernameAvailable || !usernameText"
+              (click)="updateUsername()">
+          Select Username
+        </button>
+
+      </div>
       <a routerLink="/signup" class="alc">Don't have an account?</a>
   </form>
 </div>

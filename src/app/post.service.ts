@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Post } from './post.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class PostService {
   posts: FirebaseListObservable<any[]>;
 
-  constructor(private angularFire: AngularFire) {
-    this.posts = angularFire.database.list('posts');
+  constructor(private angularFire: AngularFireDatabase) {
+    this.posts = angularFire.list('posts');
   }
 
   getPosts() {

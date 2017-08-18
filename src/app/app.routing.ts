@@ -9,7 +9,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MembersComponent } from './members/members.component';
-import { AuthGuard } from './auth.service';
+// import { AuthGuard } from './auth.service';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 
@@ -33,24 +33,20 @@ const appRoutes: Routes = [
   },
   {
     path: 'members',
-    component: MembersComponent,
-    canActivate: [AuthGuard]
+    component: MembersComponent
   },
   {
     path: 'runners/:id',
-    component: RunnerDetailsComponent,
-    canActivate: [AuthGuard]
+    component: RunnerDetailsComponent
   }, {
     path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthGuard]
+    component: AdminComponent
   }, {
     path: 'about',
     component: AboutComponent
   }, {
     path: 'chat',
-    component: ChatComponent,
-    canActivate: [AuthGuard]
+    component: ChatComponent
   }
 ];
 

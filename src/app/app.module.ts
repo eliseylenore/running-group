@@ -9,10 +9,10 @@ import { routing } from './app.routing';
 import { RunnersListComponent } from './runners-list/runners-list.component';
 import { masterFirebaseConfig } from './api-keys';
 import {
-  AngularFireModule,
-  AuthMethods,
-  AuthProviders
+  AngularFireModule
 } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 import { RunnerDetailsComponent } from './runner-details/runner-details.component';
 import { AdminComponent } from './admin/admin.component';
@@ -26,7 +26,8 @@ import { LoginComponent } from './login/login.component';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
-import { AuthGuard } from './auth.service';
+// import { AuthGuard } from './auth.service';
+import { AuthenticationService } from './authentication.service';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -63,7 +64,7 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [AuthGuard],
+  providers: [ AuthenticationService, AngularFireAuth, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

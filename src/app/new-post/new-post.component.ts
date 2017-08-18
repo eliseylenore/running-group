@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../post.model';
 import { PostService } from '../post.service';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Router } from '@angular/router';
 
 

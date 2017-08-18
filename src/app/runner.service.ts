@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Runner } from './runner.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class RunnerService {
   runners: FirebaseListObservable<any[]>;
 
-  constructor(private angularFire: AngularFire) {
-    this.runners = angularFire.database.list('runners');
+  constructor(private angularFire: AngularFireDatabase) {
+    this.runners = angularFire.list('runners');
   }
 
   getRunners() {
@@ -15,7 +15,7 @@ export class RunnerService {
   }
 
   getRunnerById(runnerId: string) {
-    return this.angularFire.database.object('runners/' + runnerId)
+    return this.angularFire.object('runners/' + runnerId)
   }
 
   addRunner(newRunner: Runner) {

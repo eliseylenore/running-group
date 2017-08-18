@@ -1,55 +1,48 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { moveIn } from '../router.animations';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  providers: [AuthenticationService],
   animations: [moveIn()],
   host: {'[@moveIn]': ''}
 })
 export class LoginComponent implements OnInit {
+  usernameText: string;
+  usernameAvailable: boolean;
 
   error: any;
   constructor(
-    public af: AngularFire,
-    private router: Router
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private authenticationService: AuthenticationService
   ) {
-
-      this.af.auth.subscribe(auth => {
-        if(auth) {
+        if(authenticationService.currentUser) {
           this.router.navigateByUrl('/members');
         }
-      });
-
     }
 
     loginFb() {
-      this.af.auth.login({
-        provider: AuthProviders.Facebook,
-        method: AuthMethods.Popup,
-      }).then(
-        (success) => {
-          this.router.navigate(['/members']);
-        }).catch(
-          (err) => {
-            this.error = err;
-        });
+      this.authenticationService.facebookLogin();
     }
 
     loginGoogle() {
-      this.af.auth.login({
-        provider: AuthProviders.Google,
-        method: AuthMethods.Popup,
-      }).then(
-        (success) => {
-          this.router.navigate(['/members']);
-      }).catch(
-        (err) => {
-        this.error = err;
-      });
+      this.authenticationService.googleLogin();
+    }
+
+    checkUsername() {
+      this.authenticationService.checkUsername(this.usernameText).subscribe(username => {
+        this.usernameAvailable = !username.$value
+      })
+    }
+
+    updateUsername() {
+      this.authenticationService.updateUsername(this.usernameText);
     }
 
   ngOnInit() {

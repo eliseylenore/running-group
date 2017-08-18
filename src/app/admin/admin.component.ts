@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Runner } from '../runner.model';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { RunnerService } from '../runner.service';
 
 @Component({

@@ -3,7 +3,6 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { RunnerService } from '../runner.service';
 import { Runner } from '../runner.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 
 @Component({

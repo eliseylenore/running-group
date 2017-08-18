@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RunnerService } from '../runner.service';
 import { Runner } from '../runner.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,9 +15,9 @@ export class RunnersListComponent implements OnInit {
   runners: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
-  constructor(private runnerService: RunnerService, private router: Router, private af: AngularFire) {
+  constructor(private runnerService: RunnerService, private router: Router, private af: AngularFireDatabase) {
     setTimeout(function() {
-      this.runners = af.database.list('runners');
+      this.runners = af.list('runners');
     }, 600);
 
   }

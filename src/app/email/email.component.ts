@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-email',
@@ -14,34 +14,32 @@ export class EmailComponent implements OnInit {
 
   state: string = '';
   error: any;
+  usernameText: "";
+  usernameAvailable: boolean;
 
   constructor(
-    public af: AngularFire,
-    private router: Router
+    private router: Router,
+    private authenticationService: AuthenticationService
   ) {
-    this.af.auth.subscribe(auth => {
-      if(auth) {
-        this.router.navigateByUrl('/members');
-      }
-    });
+    if(authenticationService.currentUser) {
+      this.router.navigateByUrl('/members');
+    }
   }
 
   onSubmit(formData) {
     if(formData.valid) {
-      console.log(formData.value);
-      this.af.auth.login({
-        email: formData.value.email,
-        password: formData.value.password
-    }).then(
-      (success) => {
-        console.log(success);
-        this.router.navigate(['/members'])
-    }).catch(
-      (err) => {
-        console.log(err);
-        this.error = err;
-      });
+      this.authenticationService.emailLogin(formData);
     }
+  }
+
+  checkUsername() {
+    this.authenticationService.checkUsername(this.usernameText).subscribe(username => {
+      this.usernameAvailable = !username.$value
+    })
+  }
+
+  updateUsername() {
+    this.authenticationService.updateUsername(this.usernameText);
   }
 
   ngOnInit() {

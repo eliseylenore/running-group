@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 import { moveIn, fallIn, moveInLeft } from '../router.animations';
 
@@ -16,14 +16,12 @@ export class MembersComponent implements OnInit {
   name: any;
 
   constructor(
-    public af: AngularFire,
+    private authenticationService: AuthenticationService,
     private router: Router
   ) {
-    this.af.auth.subscribe(auth => {
-      if(auth) {
-        this.name = auth;
-      }
-    });
+    if(authenticationService.currentUser) {
+      this.router.navigateByUrl('/members');
+    }
   }
 
 

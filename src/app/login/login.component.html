@@ -6,5 +6,26 @@
   <button (click)="loginGoogle()" id="google">Login With Google</button>
   <button routerLink="/login-email" id="email">Email</button>
 
+  <div *ngIf="authenticationService && !authenticationService.hasUsername()">
+    <h3>Choose a Username</h3>
+    <input type="text" class="input" placeholder="choose a username" [(ngModel)]="usernameText"
+    (keyup)="checkUsername()">
+
+    <p class="help is-success" *ngIf="usernameAvailable && usernameText">
+      @{{usernameText}} is available
+    </p>
+
+    <p class="help is-danger" *ngIf="!usernameAvailable && usernameText">
+      @{{usernameText}} has already been taken
+    </p>
+
+    <button class="btn btn-primary"
+    [disabled]="!usernameAvailable || !usernameText"
+          (click)="updateUsername()">
+      Select Username
+    </button>
+
+  </div>
+
   <a routerLink="/signup" routerLinkActive="active" class="alc">No account?<strong>Create one</strong></a>
 </div>
