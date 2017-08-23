@@ -1,7 +1,14 @@
+@import "../app.component.scss";
 #lock {
     width:40%;
     margin: 1.5em auto 4em auto;
     display:block;
+}
+
+#fb, #google, #email {
+  border: 2px lightgrey solid;
+  border-radius: 14px;
+  margin-bottom: 2px;
 }
 
 #fb {
@@ -11,13 +18,12 @@
 }
 
 #google {
-    border: 1px solid #95989A;
     background: #fff  url('../../assets/images/google.png') no-repeat 25px;
     background-size: 25px;
 }
 
 #email {
-    background: #ECECEC  url('../../assets/images/email.png') no-repeat 25px;
+    background: #9ddfe0  url('../../assets/images/email.png') no-repeat 25px;
     background-size: 25px;
 }
 
@@ -38,6 +44,6 @@
     }
 
     #email {
-        background: #ECECEC;
+        background: #9ddfe0;
     }
 }
