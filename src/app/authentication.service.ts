@@ -31,7 +31,7 @@ export class AuthenticationService {
                   } else return [];
                 })
                 .subscribe(user => {
-                    this.currentUser['username'] = user.username
+                    this.currentUser.username = user.username;
                 })
   }
 
@@ -63,9 +63,9 @@ export class AuthenticationService {
     });
   }
 
-  get hasUsername() {
-    return this.currentUser.username ? true : false;
-  }
+  hasUsername() {
+   return this.currentUser.username ? true : false
+ }
 
   checkUsername(username: string) {
     username = username.toLowerCase();

@@ -6,7 +6,7 @@
   <button (click)="loginGoogle()" id="google">Login With Google</button>
   <button routerLink="/login-email" id="email">Email</button>
 
-  <div *ngIf="authenticationService && !authenticationService.hasUsername()">
+  <div *ngIf="authenticationService.currentUser && authenticationService.hasUsername()">
     <h3>Choose a Username</h3>
     <input type="text" class="input" placeholder="choose a username" [(ngModel)]="usernameText"
     (keyup)="checkUsername()">

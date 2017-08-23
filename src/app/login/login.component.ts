@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
-import { moveIn } from '../router.animations';
+import { moveIn, fallIn, moveInLeft } from '../router.animations';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthenticationService } from '../authentication.service';
 
@@ -9,7 +9,7 @@ import { AuthenticationService } from '../authentication.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   providers: [AuthenticationService],
-  animations: [moveIn()],
+  animations: [moveIn(), fallIn(), moveInLeft()],
   host: {'[@moveIn]': ''}
 })
 export class LoginComponent implements OnInit {
@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    console.log(this.authenticationService.hasUsername)
   }
 
 }

@@ -11,7 +11,7 @@
 
       <button type="submit" [disabled]="!formData.valid" class="basic-btn">Log in</button>
 
-      <div *ngIf="authenticationService && !auth.hasUsername">
+      <div *ngIf="authenticationService.currencurrentUser && !authenticationService.hasUsername()">
         <h3>Choose a Username</h3>
         <input type="text" class="input" placeholder="choose a username" [(ngModel)]="usernameText"
         (keyup)="checkUsername()">
